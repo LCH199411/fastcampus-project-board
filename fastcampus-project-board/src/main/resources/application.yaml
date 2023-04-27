@@ -1,11 +1,11 @@
-debug: false # ??? ??? debug ??? ???? false? ??
+debug: false # 스프링 부트의 debug 로그를 안보려고 false로 설정
 management.endpoints.web.exposure.include: "*"
 
 logging:
   level:
     com.fastcampus.projectboard: debug
     org.springframework.web.servlet: debug
-    org.hibernate.type.descriptor.sql.BasicBinder: trace # ????? ?? ???? ?? ???
+    org.hibernate.type.descriptor.sql.BasicBinder: trace # 쿼리문에서 ?로 표시되는 부분 보여줌
 
 spring:
   datasource:
@@ -14,7 +14,7 @@ spring:
     password: 123456
     driver-class-name: org.mariadb.jdbc.Driver
   jpa:
-    defer-datasource-initialization: true # ???? ?????? ??
+    defer-datasource-initialization: true
     hibernate.ddl-auto: create
     open-in-view: false
     show-sql: true
@@ -25,12 +25,14 @@ spring:
   sql.init.mode: always
 
 
-# yml ??? ---? ????? ????. ??? ???? ??!
+# yml 파일은 ---로 도큐먼트를 구분한다. 새로운 도큐먼트 시작!
 ---
-spring:
-  config.activate.on-profile: testdb
+# 해당 프로파일을 사용하지 않으면 위에 database가 작동한다.
+#
+#spring:
+#  config.activate.on-profile: testdb
 #  datasource:
 #    url: jdbc:h2:mem:board;mode=mariadb
 #    driverClassName: org.h2.Driver
 #  sql.init.mode: always
-#  test.database.replace: none
+#  test.database.replace: none #모든 테스트는 내 테스트 DB설정을 보게 하는 (전역설정)!!!
