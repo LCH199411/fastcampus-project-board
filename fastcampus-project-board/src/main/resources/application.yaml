@@ -26,7 +26,7 @@ spring:
     properties:
       hibernate.format_sql: true
       hibernate.default_batch_fetch_size: 100
-  h2.console.enabled: false # h2
+  # h2.console.enabled: false # h2 , 사용하려면 true로 (강의에서 데모 끝났으므로 삭제)
   sql.init.mode: always
 
 
