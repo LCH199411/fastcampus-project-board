@@ -13,11 +13,6 @@ spring:
     username: root
     password: 123456
     driver-class-name: org.mariadb.jdbc.Driver
-
-# h2 testdb 사용
-#    url: jdbc:h2:mem:testdb
-#    username: sa
-#    driver-class-name: org.h2.Driver
   jpa:
     defer-datasource-initialization: true
     hibernate.ddl-auto: create
@@ -26,8 +21,14 @@ spring:
     properties:
       hibernate.format_sql: true
       hibernate.default_batch_fetch_size: 100
-  # h2.console.enabled: false # h2 , 사용하려면 true로 (강의에서 데모 끝났으므로 삭제)
+  h2.console.enabled: false # h2
   sql.init.mode: always
+
+  # spring data rest
+  data:
+    rest:
+      base-path: /api
+      detection-strategy: annotated
 
 
 # yml 파일은 ---로 도큐먼트를 구분한다. 새로운 도큐먼트 시작!
