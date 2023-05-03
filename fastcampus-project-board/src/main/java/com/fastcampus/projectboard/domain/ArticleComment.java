@@ -24,7 +24,7 @@ import java.util.Objects;
 })
 @EntityListeners(AuditingEntityListener.class)  // Auditing을 쓴다는 표시
 @Entity                                         // Auditing을 쓴다는 표시
-public class ArticleComment extends AuditingFields{   // 수정확인 주석 222
+public class ArticleComment {   // 수정확인 주석 222
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
