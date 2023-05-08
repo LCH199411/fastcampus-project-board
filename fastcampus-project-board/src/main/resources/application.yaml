@@ -29,6 +29,8 @@ spring:
     rest:
       base-path: /api
       detection-strategy: annotated
+  thymeleaf3.decoupled-logic: true
+
 
 
 # yml 파일은 ---로 도큐먼트를 구분한다. 새로운 도큐먼트 시작!
