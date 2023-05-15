@@ -6,7 +6,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-public class SecurityConfig {
+public class SecurityConfig { // extends WebSecurityConfigurerAdapter 상속받는건 컴포넌트 스타일로 바뀌어서 사용 못함
 
 
     @Bean
