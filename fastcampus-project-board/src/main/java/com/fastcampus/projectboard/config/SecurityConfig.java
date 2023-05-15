@@ -11,10 +11,17 @@ public class SecurityConfig { // extends WebSecurityConfigurerAdapter 상속받�
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        /*
         http
-                .authorizeHttpRequests((authz) -> authz.anyRequest().permitAll())
+                .authorizeHttpRequests((auth) -> auth.anyRequest().permitAll())
                 .formLogin();
         return http.build();
+       */
+        return http
+                .authorizeHttpRequests((auth) -> auth.anyRequest().permitAll())
+                .formLogin().and().build();
+
+
     }
 
 
